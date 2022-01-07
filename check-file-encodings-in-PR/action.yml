@@ -6,7 +6,6 @@ runs:
   using: "composite"
   steps:
     - name: run the checkout action
-      shell: bash
       uses: actions/checkout@v2
       with:
         fetch-depth: 0
