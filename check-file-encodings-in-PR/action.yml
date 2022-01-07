@@ -1,7 +1,4 @@
 name: check file encodings in PR
-inputs:
-  repo-token:
-    description: 'Token for the repo. Can be passed in using {{ secrets.GITHUB_TOKEN }}'
 runs:
   using: "composite"
   steps:
