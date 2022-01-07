@@ -5,10 +5,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: run the checkout action
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
     - name: list all changed files
       shell: bash
       run: |
