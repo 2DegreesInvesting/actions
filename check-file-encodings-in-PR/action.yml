@@ -6,15 +6,18 @@ runs:
   using: "composite"
   steps:
     - name: run the checkout action
+      shell: bash
       uses: actions/checkout@v2
       with:
         fetch-depth: 0
     - name: list all changed files
+      shell: bash
       run: |
         files=$(git diff --name-only origin/$GITHUB_BASE_REF...${{ github.sha }})
         IFS=$'\n'; files=($files); unset IFS;  # split the string into an array
         file --mime "${files[@]}"
     - name: list all changed files with the wrong encoding
+      shell: bash
       run: |
         files=$(git diff --name-only origin/$GITHUB_BASE_REF...${{ github.sha }})
         IFS=$'\n'; files=($files); unset IFS;  # split the string into an array
