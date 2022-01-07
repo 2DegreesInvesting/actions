@@ -5,8 +5,8 @@ runs:
     - name: list all changed files
       shell: bash
       run: |
-        ## list of all changed files
-        cat("::group::list of all changed files\n")
+        ## Installing pak
+        cat("::group::Installing pak\n")
         files=$(git diff --name-only origin/$GITHUB_BASE_REF...${{ github.sha }})
         IFS=$'\n'; files=($files); unset IFS;  # split the string into an array
         file --mime "${files[@]}"
